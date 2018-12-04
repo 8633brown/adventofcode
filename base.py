@@ -23,10 +23,6 @@ else:
 
 
 #data variable is data from website
-freq = 0
-for line in data.splitlines():
-    freq += int(line)
-print(freq)
 
 
 

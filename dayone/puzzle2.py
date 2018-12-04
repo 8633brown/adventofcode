@@ -23,14 +23,26 @@ else:
 
 
 #data variable is data from website
-freq = 0
+opList = []
+freqList = []
+currFreq = 0
+opIndex = 0
+
 for line in data.splitlines():
-    freq += int(line)
-print(freq)
+    op = int(line)
+    opList.append(op)
+    freqList.append(currFreq)
+    currFreq += op
+    if currFreq in freqList:
+        print(currFreq)
 
+while currFreq not in freqList:
 
+    freqList.append(currFreq)
+    currFreq += opList[opIndex]
 
+    opIndex += 1
+    if opIndex == len(opList):
+        opIndex = 0
 
-
-
-
+print(currFreq)
